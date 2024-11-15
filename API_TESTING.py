@@ -8,7 +8,7 @@ def api_calls():
 
     if data.get("success") and "data" in data:
         product_data = data["data"]
-        print(f"Id : {product_data['id']}\nTitle : {product_data['title']}\nDiscription : {product_data['description']}\nSuccess : {data['success']}")
+        print(f"Id : {product_data['id']}\nTitle : {product_data['title']}\nSuccess : {data['success']}\nBrand : {product_data['brand']}")
     else:
         raise Exception("Failed to fetch the data!")
 
