@@ -1,16 +1,16 @@
 import requests
 
 def api_calls():
-    base_url = 'https://api.freeapi.app/api/v1/public/randomproducts/product/random'
-    response = requests.get(url=base_url)
-    data = response.json()
-    # print(data)
-
-    if data.get("success") and "data" in data:
-        product_data = data["data"]
-        print(f"Id : {product_data['id']}\nTitle : {product_data['title']}\nSuccess : {data['success']}\nBrand : {product_data['brand']}")
+    base_url = 'https://jsonplaceholder.typicode.com/posts/1'  # Update post with ID 1
+    payload = {'title': 'Alok', 'body': 'This is the updated body content', 'userId': 1}
+    
+    response = requests.put(url=base_url, json=payload)
+    
+    if response.status_code == 200:
+        data = response.json()
+        print("Updated Data:", data)
     else:
-        raise Exception("Failed to fetch the data!")
+        print("Failed to update the resource. Status Code:", response.status_code)
 
 def main():
     try:
@@ -20,3 +20,39 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+
+
+
+
+
+
+
+
+
+# import requests
+
+# def api_calls():
+#     base_url = 'https://api.freeapi.app/api/v1/kitchen-sink/http-methods/put'
+#     payload = {'connection': 'none'}  # Example payload, you may adjust it as needed
+#     response = requests.put(url=base_url, json=payload)  # Use PUT instead of GET
+#     try:
+#         data = response.json()  # Attempt to parse the response as JSON
+#         print(data)
+
+#         if data.get("success") and "data" in data:
+#             product_data = data["data"]
+#             print(f"Method : {product_data['method']}\nSomething : {product_data['headers']['connection']}")
+#         else:
+#             raise Exception("Failed to fetch the data!")
+#     except ValueError:
+#         print("Error: Response is not in valid JSON format.")
+
+# def main():
+#     try:
+#         api_calls()
+#     except Exception as e:
+#         print(str(e))
+
+# if __name__ == "__main__":
+#     main()
