@@ -1,11 +1,16 @@
-import requests
+import json
 
 def api_calls():
-    base_url = 'https://api.freeapi.app/api/v1/kitchen-sink/http-methods/get'
-    response = requests.get(url=base_url)
-    data = response.json()
-    # print(data)
+    # Open the local JSON file
+    try:
+        with open('API_Data.json', 'r') as file:
+            data = json.load(file)
+    except FileNotFoundError:
+        raise Exception("The file 'API_Data.json' was not found!")
+    except json.JSONDecodeError:
+        raise Exception("Error decoding JSON from the file!")
 
+    # Check if the necessary keys exist in the data
     if data.get("success") and "data" in data:
         product_data = data["data"]
         print(f"Method : {product_data['method']}\nConnection : {product_data['headers']['connection']}")
