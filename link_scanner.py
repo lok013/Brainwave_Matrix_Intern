@@ -1,3 +1,7 @@
+# Project Done By Alok Sharma
+# Project Done By Alok Sharma
+# Project Done By Alok Sharma
+
 import requests
 import re
 from urllib.parse import urlparse
@@ -78,3 +82,6 @@ urls = [
 
 for url in urls:
     scan_url(url)
+
+
+# Project Done By Alok Sharma
