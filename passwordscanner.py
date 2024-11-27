@@ -1,3 +1,7 @@
+# Project Done By Alok Sharma
+# Project Done By Alok Sharma
+# Project Done By Alok Sharma
+
 import re
 
 def password_strength(password):
@@ -62,3 +66,5 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+# Project Done By Alok Sharma
